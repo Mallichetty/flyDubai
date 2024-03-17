@@ -3,7 +3,7 @@ Feature: Validation of Ticket Booking
 @Regression 
 Scenario: Open the flyDubai site and confirm the ticket booking 
 	Given User hits the Flydubai url 
-	And User enter the route date and no of passengers 
+	And User enter the route from "Dubai" to "Bengaluru" on April for "2" passengers 
 	Then User click on search button 
 	Then verify if user lands on the flights result page 
 	And user click on the flight tab and select one fare brand 

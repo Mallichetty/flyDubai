@@ -9,12 +9,13 @@ import io.cucumber.junit.Cucumber;
 public class bookFlightSteps {
 
 	@Given("^User hits the Flydubai url$")
-	public void User_hits_the_Flydubai_url() {
+	public void User_hits_the_Flydubai_url()
+	{
 
 	}
 
-	@And("^User enter the route date and no of passengers$")
-	public void Userentertheroutedateandnoofpassengers() {
+	@And("^User enter the route from {string} to {string} on April for {string} passengers$")
+	public void Userentertheroutedateandnoofpassengers(String from, String to, String passengers) {
 
 	}
 
