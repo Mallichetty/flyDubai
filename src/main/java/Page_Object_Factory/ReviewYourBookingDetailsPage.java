@@ -14,8 +14,14 @@ public class ReviewYourBookingDetailsPage extends Base {
 
     By verifyReviewPageTitle =By.xpath("//*[text()='Review your booking details']");
 
+    By fareSummary = By.xpath("//*[@id='fareAmt0']");
     public Boolean verifyPageTitle()
     {
         return waitForElement(verifyReviewPageTitle).isDisplayed();
+    }
+
+    public String getFareSummary()
+    {
+        return waitForElement(fareSummary).getText();
     }
 }

@@ -15,6 +15,7 @@ public class ResultsPage extends Base {
     }
 
     By pageTitle = By.xpath("//*[text()='SELECT DEPARTING FLIGHT']");
+    By fareValue = By.xpath("//*[@id='-2']/div[5]/div[1]/fz-flight-fare/div/div");
     By selectFlight = By.xpath("//*[@class='avail-list-desk']/div/div/div[1]");
     By selectFareType = By.xpath("//*[@class='expanded-flight-view']//*[@class='fareBrandBox']");
 
@@ -23,6 +24,11 @@ public class ResultsPage extends Base {
     public Boolean verifyPageTitle()
     {
         return waitForElement(pageTitle).isDisplayed();
+    }
+
+    public String getfareValue()
+    {
+        return waitForElement(fareValue).getText();
     }
     public void clickSelectFlight() {
         waitForElement(selectFlight);

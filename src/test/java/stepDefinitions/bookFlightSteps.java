@@ -21,7 +21,7 @@ public class bookFlightSteps {
 	PassengerDetailsPage passengerDetailsPage = new PassengerDetailsPage(driver);
 	PassengerDetails passengerDetails = new PassengerDetails(driver);
 	ReviewYourBookingDetailsPage reviewYourBookingDetailsPage = new ReviewYourBookingDetailsPage(driver);
-
+	String expected;
 	@When("User enter the route from {string} to {string} on April for {string} passengers")
 	public void userEnterTheRouteFromToOnAprilForPassengers(String from, String to, String passengers) {
 		dashboardPage.selectFrom(from);
@@ -43,6 +43,7 @@ public class bookFlightSteps {
 
 	@And("^user click on the flight tab and select one fare brand$")
 	public void userclickontheflighttabandselectonefarebrand() {
+		expected = resultsPage.getfareValue();
 		resultsPage.clickSelectFlight();
 		resultsPage.clickSelectType();
 	}
@@ -86,11 +87,14 @@ public class bookFlightSteps {
 	@Then("^verify if user landed on the review your bookings page$")
 	public void verifyifuserlandedonthereviewyourbookingspage()
 	{
-		reviewYourBookingDetailsPage.verifyPageTitle();
+		Assert.assertTrue("Page is not displayed",reviewYourBookingDetailsPage.verifyPageTitle());
 	}
 
 	@And("^user validates the fare and tax component displayed in the first page is same$")
-	public void uservalidatesthefareandtaxcomponentdisplayedinthefirstpageissame() {
+	public void uservalidatesthefareandtaxcomponentdisplayedinthefirstpageissame()
+	{
+		String actual = reviewYourBookingDetailsPage.getFareSummary();
+		Assert.assertEquals(expected,actual);
 
 	}
 }

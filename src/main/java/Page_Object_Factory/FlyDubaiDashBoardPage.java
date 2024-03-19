@@ -22,7 +22,7 @@ public class FlyDubaiDashBoardPage extends Base {
 	By submitButton = By.xpath("//div[contains(@class,'make-booking-tab')]/div[5]/input");
 	By oneWayCheckBox = By.xpath("//*[@id='oneWayTriptype']");
 
-	By selectDate = By.xpath("");
+	By selectDate = By.xpath("//*[@id='dateRangeWrapper']/section/div[2]/div[2]/div[2]/section[2]/div[2]/div[25]");
 	public void selectFrom(String fromPlace) {
 		waitForElement(from);
 		sendKeys(from, fromPlace);
@@ -38,6 +38,7 @@ public class FlyDubaiDashBoardPage extends Base {
 	public void selectDate() {
 		waitForElement(date);
 		click(date);
+		waitForElement(selectDate);
 	}
 
 	public void clickOneWayCheckBox() {
