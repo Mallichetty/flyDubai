@@ -29,7 +29,7 @@ public class ResultsPage extends Base {
         click(selectFlight);
     }
 
-    public void clickSelectDate() {
+    public void clickSelectType() {
         waitForElement(selectFareType);
         click(selectFareType);
     }

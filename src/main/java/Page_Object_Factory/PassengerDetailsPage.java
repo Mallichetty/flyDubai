@@ -13,7 +13,7 @@ public class PassengerDetailsPage extends Base {
         this.driver=driver;
     }
 
-    By verifyExtrasPageTitle =By.xpath("//*[text()='Passenger details']");
+    By verifyExtrasPageTitle = By.xpath("//*[text()='Passenger details']");
     By firstNameTxtBox = By.xpath("//*[@id='First_Name']");
     By lastNameTxtBox = By.xpath("//*[@id='Last_Name']");
     By emailAddressTxtBox = By.xpath("//*[@id='Email_Address']");
